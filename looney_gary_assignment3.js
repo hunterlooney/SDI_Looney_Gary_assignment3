@@ -2,13 +2,6 @@
 //SDI 1303: Project 3
 
 
-
-
-
-
-
-
-
 //Objects
 /*
 var arr = [true, false, " ", [], function () {}, 101];
@@ -55,3 +48,42 @@ for (var key in student) {
 };
 */
 
+
+
+//Revealing Module Pattern
+
+//Dauntless, Interceptor, Bounty, Enterprise
+//Constructor
+var pirateShip = function (name) {
+									var cargoHold = [];
+									var cargoLoad = function (item) {
+																		if (item !== "elephants") {
+																		cargoHold.push(item);
+																		} else {
+																		console.log("Not allowed to load elephants!!!");
+																		}
+									};
+									var cargoList = function () {
+																	for (var n = 0; n < cargoHold.length; n++) {
+																													console.log(name + " cargo " + n + ": " + cargoHold [ n ] + ".");
+																	}
+									};
+									return {
+												"name": name,
+												"captain": " ",
+												"crew": [],
+												"cargoLoad": cargoLoad,
+												"cargoList": cargoList
+									};	
+};
+
+var dauntless = pirateShip("Dauntless");
+
+dauntless.cargoLoad("oranges");
+dauntless.cargoLoad("elephants");
+//dauntless.hold.push("elephants");
+console.log(dauntless);
+
+dauntless.cargoList ();
+
+//18:24
