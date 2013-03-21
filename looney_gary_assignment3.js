@@ -7,11 +7,50 @@
 
 
 
+var handleData = function (json) {
+	for (var i = 0; i < json.contents.length; i++) {
+			var content = json.contents[i]
+			console.log("Player Number: " + content.player + ", Name: " + content.name + ", Amount of Lockpicks in Backpack: " + content.backpack);
+	};
+	
+};
+handleData(json3);
+
+
+var pirateShip = function (name) { //private
+		var backpackHold = [];
+		var backpackLoad = function (item) {
+				if (item !== 0) {
+				backpackHold.push(item);
+				} else {
+				console.log("Why are you trying to add 0 lockpicks?");
+				}
+		};
+		var backpackList = function () {
+				for (var n = 0; n < backpackHold.length; n++) {
+						console.log(name + " backpack " + n + ": " + backpackHold [ n ] + ".");
+				}
+		};
+		var getName = function () { 
+				return name; 
+		};
+		return { //public
+				"name": getName,
+				"captain": " ",
+				"crew": [],
+				"backpackLoad": backpackLoad,
+				"backpackList": backpackList
+		};	
+};
+
+var dauntless = pirateShip("Dauntless");
+dauntless.backpackLoad(0);
+console.log(dauntless.name); //getter; accessor
+dauntless.backpackList ();
 
 
 
-
-
+//console.log(content.player[1])
 
 
 

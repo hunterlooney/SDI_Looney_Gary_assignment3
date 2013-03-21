@@ -3,7 +3,20 @@
 // JSON file
 
 
-
+var json3 = {
+		"contents": [
+				{
+					"player": "01",
+					"name": "Kayla",
+					"backpack": 1
+				},
+				{
+					"player": "02",
+					"name": "Bob",
+					"backpack": 0
+				}
+		]
+};
 
 
 
