@@ -31,6 +31,8 @@ var equipInvent = function () { //private
 				};
 				if (backpackHold >= 2) {
 						console.log("\"Now I can pick the lock and escape this room.\"");
+						console.log("\"Come on Bob let's go! Get up!\" Bob's ankle is injured.");
+						console.log("\We will probably have to rest periodically because of Bob's injury.");
 				};
 		};
 		return { //public
@@ -39,9 +41,38 @@ var equipInvent = function () { //private
 		};	
 };
 var player1 = equipInvent();
-player1.backpackLoad(6);
+player1.backpackLoad(0);
 
-//player1.backpackHold[];
+
+var escape = {
+		badGuys: [ "Bad Guy 1",  "Bad Guy 2",  "Bad Guy 3",  "Bad Guy 4" ], //array
+		wayOutWithoutFight: false, //boolean
+		weaponsAvailable: 1, //number
+		killedSomeone: "\"Why did I have to kill someone? I'm not a killer.\"", //string
+		kit: { //object
+				name: "Kayla", 
+				weapon: "knife",
+				attackPhrase: function () {
+						console.log("\"Let's do this!\"");
+				},
+				name: "Bob", 
+				weapon: "hammer",
+				attackPhrase: function () {
+						console.log("\"I'm Ready! Are you?\"");
+				}				
+		}
+};
+
+
+console.log(escape);
+
+//argument
+//object
+
+//return
+//boolean, array, number, string, object
+
+
 
 //Notes
 //Definitions
