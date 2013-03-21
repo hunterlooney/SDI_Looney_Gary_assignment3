@@ -2,22 +2,16 @@
 //SDI 1303: Project 3
 
 
-
-
-
-
-
-var handleData = function (json) {
-	for (var i = 0; i < json.contents.length; i++) {
-			var content = json.contents[i]
-			console.log("Player Number: " + content.player + ", Name: " + content.name + ", Amount of Lockpicks in Backpack: " + content.backpack);
-	};
-	
+var player = function (json) {
+		for (var i = 0; i < json.contents.length; i++) {
+				var content = json.contents[i]
+				console.log("Player Number: " + content.player + ", Name: " + content.name + ", Amount of Lockpicks in Backpack: " + content.backpack);
+		};
+		return { //public
+				"playerNumber" = getPlayerNumber
 };
-handleData(json3);
 
-
-var pirateShip = function (name) { //private
+var equipInvent = function (name) { //private
 		var backpackHold = [];
 		var backpackLoad = function (item) {
 				if (item !== 0) {
@@ -31,26 +25,20 @@ var pirateShip = function (name) { //private
 						console.log(name + " backpack " + n + ": " + backpackHold [ n ] + ".");
 				}
 		};
-		var getName = function () { 
-				return name; 
-		};
+		var getName = name; 
 		return { //public
 				"name": getName,
-				"captain": " ",
-				"crew": [],
 				"backpackLoad": backpackLoad,
 				"backpackList": backpackList
 		};	
 };
 
-var dauntless = pirateShip("Dauntless");
-dauntless.backpackLoad(0);
-console.log(dauntless.name); //getter; accessor
-dauntless.backpackList ();
+var player1 = equipInvent(1);
+player1.backpackLoad(1);
+console.log(player1.name); //getter; accessor
+player1.backpackList(1);
 
-
-
-//console.log(content.player[1])
+player(json3);
 
 
 
