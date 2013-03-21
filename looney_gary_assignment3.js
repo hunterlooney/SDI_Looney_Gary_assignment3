@@ -1,14 +1,16 @@
 //Gary W. Hunter Looney
 //SDI 1303: Project 3
 
-
-var player = function (json) {
-		for (var i = 0; i < json.contents.length; i++) {
-				var content = json.contents[i]
-				console.log("Player Number: " + content.player + ", Name: " + content.name + ", Amount of Lockpicks in Backpack: " + content.backpack);
+var takeInventory = true;
+if (takeInventory ===true) {
+		var player = function (json) {
+				for (var i = 0; i < json.contents.length; i++) {
+						var content = json.contents[i]
+						console.log("Player Number: " + content.player + ", Name: " + content.name + ", Amount of Lockpicks in Backpack: " + content.backpack);
+				};
 		};
+		player(json3);
 };
-player(json3);
 
 var equipInvent = function () { //private
 		var backpackHold = [];
@@ -27,44 +29,64 @@ var equipInvent = function () { //private
 						backpackHold++;
 						console.log("You have " + backpackHold + " lockpicks in your backpack.");
 				};
-				if (backpackHold === 2) {
+				if (backpackHold >= 2) {
 						console.log("\"Now I can pick the lock and escape this room.\"");
 				};
 		};
 		return { //public
-				"backpackLoad": backpackLoad
+				"backpackLoad": backpackLoad,
+				"backpackHold": backpackHold
 		};	
 };
-
 var player1 = equipInvent();
-player1.backpackLoad(0);
+player1.backpackLoad(6);
 
+//player1.backpackHold[];
 
+//Notes
+//Definitions
+/*
+reference: http://www.cs.kent.ac.uk/people/staff/djb/book/glossary.html#m
+*/
+//Mutator
+/*
+mutator method
+A method specifically designed to allow controlled modification of a private attribute of a class. 
+By convention, we name mutators with a set prefix followed by the name of the attribute being modified. 
+For instance, the mutator for an attribute named speed would be setSpeed. 
+By making an attribute private, we prevent objects of other 
+classes from altering its value other than through its mutator. 
+The mutator is able to check the value being used to modify the 
+attribute and reject the modification if necessary. 
+In addition, modification of one attribute might require others 
+to be modified in order to keep the object in a consistent state. 
+A mutator method can undertake this role. 
+Mutators are used both to grant safe access to the value of a private attribute 
+and to protect attributes from modification by objects of other classes. 
+The latter goal is achieved by choosing an appropriate visibility for the mutator.
+*/
+//Argument
+/*
+argument
+Information passed to a method. 
+Arguments are also sometimes called parameters. 
+A method expecting to receive arguments must contain a 
+formal argument declaration for each as part of its method header. 
+When a method is called, the actual argument values are copied 
+into the corresponding formal arguments.
+*/
+//Method
+/*
+method
+The part of a class definition that implements some of 
+the behavior of objects of the class. 
+The body of the method contains declarations of 
+local variables and statements to implement the behavior. 
+A method receives input via its arguments, if any, and may return 
+a result if it has not been declared as void.
+*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Practice
-
+//Practice Exercises from Full Sail
 //Objects
 /*
 var arr = [true, false, " ", [], function () {}, 101];
@@ -110,7 +132,6 @@ for (var key in student) {
 							console.log( "key: " + key + ", value: ", student [key]);
 };
 */
-
 //Revealing Module Pattern
 /*
 //Dauntless, Interceptor, Bounty, Enterprise
@@ -150,7 +171,6 @@ dauntless.cargoLoad("elephants");
 console.log(dauntless.name); //getter; accessor
 dauntless.cargoList ();
 */
-
 //Data Structuring
 /*
 //Accessing JSON
