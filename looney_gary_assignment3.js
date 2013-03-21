@@ -20,7 +20,16 @@ var equipInvent = function () { //private
 				} else {
 				console.log("Why are you trying to add 0 lockpicks?");
 				}
-				//while backpackHold
+				while (backpackHold < 2) {
+						console.log("\"I better keep looking for lockpicks.\"");
+						console.log("You just found a lockpick!");
+						console.log("You just added a lockpick!");
+						backpackHold++;
+						console.log("You have " + backpackHold + " lockpicks in your backpack.");
+				};
+				if (backpackHold === 2) {
+						console.log("\"Now I can pick the lock and escape this room.\"");
+				};
 		};
 		return { //public
 				"backpackLoad": backpackLoad
@@ -29,7 +38,6 @@ var equipInvent = function () { //private
 
 var player1 = equipInvent();
 player1.backpackLoad(0);
-player1.backpackLoad(1);
 
 
 

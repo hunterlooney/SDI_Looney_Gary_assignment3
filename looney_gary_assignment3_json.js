@@ -8,7 +8,7 @@ var json3 = {
 				{
 					"player": "01",
 					"name": "Kayla",
-					"backpack": 1
+					"backpack": 0
 				},
 				{
 					"player": "02",
