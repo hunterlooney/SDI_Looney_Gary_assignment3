@@ -7,38 +7,45 @@ var player = function (json) {
 				var content = json.contents[i]
 				console.log("Player Number: " + content.player + ", Name: " + content.name + ", Amount of Lockpicks in Backpack: " + content.backpack);
 		};
-		return { //public
-				"playerNumber" = getPlayerNumber
 };
+player(json3);
 
-var equipInvent = function (name) { //private
+var equipInvent = function () { //private
 		var backpackHold = [];
 		var backpackLoad = function (item) {
 				if (item !== 0) {
 				backpackHold.push(item);
+				console.log("You just added a lockpick!");
+				console.log("You have " + backpackHold + " lockpicks in your backpack.");
 				} else {
 				console.log("Why are you trying to add 0 lockpicks?");
 				}
+				//while backpackHold
 		};
-		var backpackList = function () {
-				for (var n = 0; n < backpackHold.length; n++) {
-						console.log(name + " backpack " + n + ": " + backpackHold [ n ] + ".");
-				}
-		};
-		var getName = name; 
 		return { //public
-				"name": getName,
-				"backpackLoad": backpackLoad,
-				"backpackList": backpackList
+				"backpackLoad": backpackLoad
 		};	
 };
 
-var player1 = equipInvent(1);
+var player1 = equipInvent();
+player1.backpackLoad(0);
 player1.backpackLoad(1);
-console.log(player1.name); //getter; accessor
-player1.backpackList(1);
 
-player(json3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
