@@ -44,33 +44,45 @@ var player1 = equipInvent();
 player1.backpackLoad(0);
 
 
-var escape = {
-		badGuys: [ "Bad Guy 1",  "Bad Guy 2",  "Bad Guy 3",  "Bad Guy 4" ], //array
-		wayOutWithoutFight: false, //boolean
-		weaponsAvailable: 1, //number
-		killedSomeone: "\"Why did I have to kill someone? I'm not a killer.\"", //string
-		kit: { //object
-				name: "Kayla", 
-				weapon: "knife",
-				attackPhrase: function () {
-						console.log("\"Let's do this!\"");
-				},
-				name: "Bob", 
-				weapon: "hammer",
-				attackPhrase: function () {
-						console.log("\"I'm Ready! Are you?\"");
-				}				
-		}
+var escape = function () {
+		var badGuys = [ "Bad Guy 1",  "Bad Guy 2",  "Bad Guy 3",  "Bad Guy 4" ], //array
+			wayOutWithoutFight = false, //boolean
+			weaponsAvailable = 1, //number
+			killedSomeone = "\"Why did I have to kill someone? I'm not a killer.\"", //string
+			kaylaKit = { //object
+					name: "Kayla", 
+					weapon: "knife",
+					attackPhrase: "\"Let's do this!\""
+			},
+			bobKit = {
+					name: "Bob", 
+					weapon: "hammer",
+					attackPhrase: "\"I'm Ready! Are you?\""
+			}
+		return {
+				"badGuys": badGuys, //Return Array
+				"wayOutWithoutFight": "\"Is there a way out without a fight?\" " + wayOutWithoutFight, //Return String and Boolean
+				"weaponsAvailable": "\"How many weapons do we have?\" " + weaponsAvailable, //Return String and Number
+				"killedSomeone": killedSomeone, //Return String
+				"kaylaKit": kaylaKit, //Return Object
+				"bobKit": bobKit //Return Object
+		};
 };
 
+var abilityToEscape = escape();
 
-console.log(escape);
 
-//argument
-//object
+//Log the returns out individually
+console.log(abilityToEscape.badGuys);
+console.log(abilityToEscape.wayOutWithoutFight);
+console.log(abilityToEscape.weaponsAvailable);
+console.log(abilityToEscape.killedSomeone);
+console.log(abilityToEscape.kaylaKit);
+console.log(abilityToEscape.bobKit);
 
-//return
-//boolean, array, number, string, object
+//Or log out the whole thing I'm going to comment it out though
+//console.log(abilityToEscape);
+
 
 
 
